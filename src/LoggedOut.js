@@ -9,7 +9,7 @@ function LoggedOut() {
 
     return (
         <div>
-            <h2>Please log in to view your current projects</h2>
+            <h2 id="welcome">Welcome! Please sign in to access your current and completed projects!</h2>
             {/* <button onClick={() => login(username)}>Log in</button> */}
             <Login onLogin={login}/>
             <SignUp />

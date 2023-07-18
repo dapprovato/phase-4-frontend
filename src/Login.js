@@ -6,7 +6,6 @@ function Login( {onLogin} ) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log("username", username)
         fetch("http://localhost:3000/login", {
             method: "POST",
             headers: {
@@ -15,7 +14,13 @@ function Login( {onLogin} ) {
             body: JSON.stringify({username, password}),
         })
         .then((result) => result.json())
-        .then((user) => onLogin(user))
+        .then((user) => {
+            console.log("boot n snoot", user)
+            if (!user.error) return onLogin(user)
+            else {
+                return user.error
+            }
+        })
     }
     
     return (

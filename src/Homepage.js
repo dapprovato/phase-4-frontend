@@ -16,9 +16,6 @@ function Homepage( {onLogin, onLogout} ) {
     
     return (
         <div>
-            <div id="welcome">
-                Welcome! Please sign in to access your current and completed projects!
-            </div>
             {/* <Login onLogin={login} /> */}
             {/* <Logout onLogout={onLogout} /> */}
             {user.auth ? <LoggedIn /> : <LoggedOut />}
