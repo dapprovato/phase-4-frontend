@@ -4,8 +4,7 @@ import EditProject from "./EditProject"
 
 function Projects( {projects} ) {
 
-
-    function handleDelete(event) {
+  function handleDelete(event) {
         fetch(`http://localhost:3000/projects/${event.target.value}`, {
           method: "DELETE",
           headers: {

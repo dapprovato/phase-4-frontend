@@ -60,7 +60,7 @@ function App() {
       <div>{user.auth ? "is logged in" : "not logged in"}</div>
       <Routes>
         <Route exact path="/projects" element={<Projects projects={projects} />} />
-        <Route exact path="/tasks" element={<Tasks tasks={tasks} />} />
+        <Route exact path="/tasks" element={<Tasks tasks={tasks} projects={projects} />} />
         <Route exact path="/" element={<Homepage onLogin={handleLogin} onLogout={handleLogout} users={users} />} />
       </Routes>
     </div>

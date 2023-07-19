@@ -1,8 +1,12 @@
 import React, { useState } from "react"
 
-function CreateTask() {
+function CreateTask( {projects} ) {
     const [createTask, setCreateTask] = useState({
         content: "",
+    })
+
+    const projectSelection = projects.map((project) => {
+        return <option value={project.id}>{project.title}</option>
     })
 
     function onSubmit(createTask) {
@@ -37,6 +41,10 @@ function CreateTask() {
         <div> 
             <form onSubmit={handleSubmit}>
                 <input type="text" id="content" placeholder="add task" value={createTask.content} onChange={handleChange} />
+                <select>
+                    <option value={null}>Add to project</option>
+                    {projectSelection}
+                </select>
                 <button type="submit">Submit</button>
             </form>
         </div>

@@ -1,7 +1,8 @@
 import React from 'react'
 import CreateTask from "./CreateTask"
+import EditTask from "./EditTask"
 
-function Tasks( {tasks} ) {
+function Tasks( {tasks, projects} ) {
 
     function handleDelete(event) {
         fetch(`http://localhost:3000/tasks/${event.target.value}`, {
@@ -20,7 +21,7 @@ function Tasks( {tasks} ) {
     
     return (
         <div>
-            <CreateTask />
+            <CreateTask projects={projects} />
             {tasks.map((task) => {
                 return (
                     <div>

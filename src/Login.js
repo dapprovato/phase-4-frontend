@@ -15,7 +15,6 @@ function Login( {onLogin} ) {
         })
         .then((result) => result.json())
         .then((user) => {
-            console.log("boot n snoot", user)
             if (!user.error) return onLogin(user)
             else {
                 return user.error
